@@ -1,0 +1,26 @@
+name: brew bump
+
+on:
+  schedule:
+    # Runs at 2:47am on Mondays.
+    - cron: "47 2 * * 1"
+  workflow_dispatch:
+
+jobs:
+  autobump:
+    runs-on: macos-26
+    if: github.repository == 'BD103/homebrew-tap'
+    steps:
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@5037c6f1012cc5ea0b9f03fedbaf9955ed9e51e0 # 2026.08.03.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Git user
+        uses: Homebrew/actions/git-user-config@b35a29a0f83ee8b8ca07b219fc8db3d7bb88ab49 # 2026.08.10.2
+        with:
+          username: ${{ (github.event_name == 'workflow_dispatch' && github.actor) || 'BrewTestBot' }}
+
+      - name: Bump casks
+        run: brew bump --tap BD103/tap --no-fork --open-pr
