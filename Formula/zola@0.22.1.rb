@@ -6,12 +6,9 @@ class ZolaAT0221 < Formula
   license "EUPL-1.2"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d0b4f6dcd6f93092e5d6b7c5523d4708542371a56983805abd7c63331ed1eac5"
-    sha256 cellar: :any,                 arm64_sequoia: "5ef5e79cc049d96c6ed8e203a104e66471aad1e61303d595ab3b2c5907033d2e"
-    sha256 cellar: :any,                 arm64_sonoma:  "ad449dec819db4ee40826148692be8392eaa8694cbba236646ccd9f292885070"
-    sha256 cellar: :any,                 sonoma:        "acdcc9fec950ac9c5a109cbedaf4dd57bd6a5aaaf1ace613f84a35db23740c2c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "85106de0bbb3f42628d011213df85a1ca705d785fe2dfa50bc0d7ad72d23ae23"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd1481a6f76baf68adfac5b59d3df2db3027ec32cb0bd526dcd7583e41fe007e"
+    root_url "https://github.com/BD103/homebrew-tap/releases/download/zola@0.22.1-0.22.1"
+    sha256 cellar: :any, arm64_tahoe:  "f3bc231230e9d8233046f5144f10a3a78e3da5ad8542156bec11fefe1ff960d7"
+    sha256 cellar: :any, x86_64_linux: "49a166fd5595cfc19f5111e73791206fd8a12e36748606516e7b0058da3c4492"
   end
 
   depends_on "pkgconf" => :build
