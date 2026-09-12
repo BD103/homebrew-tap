@@ -1,6 +1,6 @@
 cask "finamp@beta" do
-  version "0.9.25-beta"
-  sha256 "f43f5edd62c7ea6d272ffc301795fa5c4512aada3d46e348b58cb27198f375b1"
+  version "1.0.1-beta"
+  sha256 "8d607b57c12726c5bcd6109e0ac02028233bead786a3132137ffc81385eb940a"
 
   url "https://github.com/finamp-app/finamp/releases/download/#{version}/Finamp-#{version}-macOS.zip"
   name "Finamp"
