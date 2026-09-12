@@ -16,10 +16,10 @@ cask "ldtk" do
 
   app "LDtk.app"
 
-  preflight do
+  preflight_steps do
     # Remove quarantine attribute on app, since it isn't notarized and won't open by default. This
     # isn't secure, but you accept the risk when installing LDtk.
-    system_command "/usr/bin/xattr", args: ["-d", "com.apple.quarantine", "#{staged_path}/LDtk.app"]
+    run "/usr/bin/xattr", args: ["-d", "com.apple.quarantine", "{{staged_path}}/LDtk.app"]
   end
 
   zap trash: [
