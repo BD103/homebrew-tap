@@ -22,7 +22,7 @@ cask "finamp@beta" do
     end
   end
 
-  depends_on :macos
+  depends_on macos: :monterey
 
   app "Finamp.app"
 
